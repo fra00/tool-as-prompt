@@ -168,7 +168,6 @@ Ma anche:
 
 #### **Approfondimenti**
 
-- 📖 [Foundation: LLM-First Documentation Principles](#) *(leggi questo prima se nuovo al concetto)*
 - 🔬 [Benchmark "Saga di Lyra"](https://github.com/fra00/llm-first-documentation/tree/main/benchmark) *(dati empirici)*
 
 ---
