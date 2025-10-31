@@ -1,176 +1,174 @@
-## Titolo: **Tool as Prompt: Quando la Documentazione Diventa un'API Eseguibile**
+## Title: **Tool as Prompt: When Documentation Becomes an Executable API**
 
-### Sottotitolo: *Come i principi LLM-First trasformano i file Markdown in tool computazionali che l'IA può caricare ed eseguire, illustrato con i framework 2WHAV e LLM-First.*
-
----
-
-### **1. Il Salto Quantico: Oltre la Documentazione come Testo Passivo**
-
-Per decenni, abbiamo trattato la documentazione come un artefatto statico, un testo passivo scritto da umani per essere letto da altri umani. Con l'avvento dei Large Language Model, questo paradigma è diventato un collo di bottiglia. Fornire a un LLM un PDF o un `README.md` tradizionale è come dare a un processore un romanzo e sperare che ne estragga un algoritmo. È un processo di inferenza inefficiente, fragile e incline all'errore.
-
-È il momento di un salto quantico. Dobbiamo iniziare a progettare la documentazione non come semplice testo, ma come un **artefatto computazionale**. Questo articolo introduce il paradigma del **"Tool as Prompt"**: un metodo per scrivere documenti strutturati che un LLM non si limita a leggere, ma **carica, impara ed esegue** come se fossero un'estensione software temporanea.
+### Subtitle: *How LLM-First principles transform Markdown files into computational tools that an AI can load and execute, illustrated with the 2WHAV and LLM-First frameworks.*
 
 ---
 
-### **2. La Base: I Principi della Documentazione LLM-First**
+### **1. The Quantum Leap: Beyond Documentation as Passive Text**
 
-Per trasformare un documento in un tool, dobbiamo prima cambiare il modo in cui lo scriviamo. È qui che entra in gioco il framework [**LLM-First Documentation**](https://github.com/fra00/llm-first-documentation). Il suo obiettivo è semplice ma rivoluzionario: ristrutturare la conoscenza per passare da un processo di *inferenza semantica* a uno di *lookup deterministico*.
+For decades, we've treated documentation as a static artifact—a passive text written by humans to be read by other humans. With the advent of Large Language Models, this paradigm has become a bottleneck. Giving an LLM a traditional PDF or `README.md` is like handing a processor a novel and hoping it extracts an algorithm. It's an inefficient, brittle, and error-prone inference process.
 
-I principi chiave – come la **struttura gerarchica esplicita**, l'uso di **tabelle invece della prosa** e la definizione di **logica condizionale** (`Use when / Don't use when`) – non sono semplici miglioramenti stilistici. Sono scelte di ingegneria che trasformano un testo in uno **schema di dati implicito**, una sorta di JSON o YAML scritto in Markdown.
-
-Questa è la base tecnica che rende possibile il "Tool as Prompt". Un documento LLM-First non è più solo "leggibile", diventa **"eseguibile"**.
+It's time for a quantum leap. We must start designing documentation not as mere text, but as a **computational artifact**. This article introduces the **"Tool as Prompt"** paradigm: a method for writing structured documents that an LLM doesn't just read, but **loads, learns, and executes** as if they were a temporary software extension.
 
 ---
 
-### **3. Il Paradigma "Tool as Prompt": Documenti come Software**
+### **2. The Foundation: The Principles of LLM-First Documentation**
 
-Un "Tool as Prompt" è un documento che incapsula un processo eseguibile. Quando un LLM lo riceve, attraversa tre fasi computazionali:
+To turn a document into a tool, we first need to change how we write it. This is where the [**LLM-First Documentation**](https://github.com/fra00/llm-first-documentation) framework comes in. Its goal is simple yet revolutionary: to restructure knowledge to shift from a process of *semantic inference* to one of *deterministic lookup*.
 
-| Fase | Analogia Software | Operazione LLM | Output |
+The key principles—such as **explicit hierarchical structure**, the use of **tables instead of prose**, and the definition of **conditional logic** (`Use when / Don't use when`)—are not mere stylistic improvements. They are engineering choices that transform a text into an **implicit data schema**, a kind of JSON or YAML written in Markdown.
+
+This is the technical foundation that makes "Tool as Prompt" possible. An LLM-First document is no longer just "readable"; it becomes **"executable."**
+
+---
+
+### **3. The "Tool as Prompt" Paradigm: Documents as Software**
+
+A "Tool as Prompt" is a document that encapsulates an executable process. When an LLM receives it, it goes through three computational phases:
+
+| Phase | Software Analogy | LLM Operation | Output |
 | --- | --- | --- | --- |
-| **1. Load** | `import package` | Parsing struttura (header, tabelle, schema) | Schema interno mappato |
-| **2. Compile** | `compile()` | Astrazione regole, vincoli e logica | Modello operativo eseguibile |
-| **3. Execute** | `run(input)` | Applicazione modello a nuovo input specifico | Risultato deterministico |
+| **1. Load** | `import package` | Parsing structure (headers, tables, schema) | Mapped internal schema |
+| **2. Compile** | `compile()` | Abstracting rules, constraints, and logic | Executable operational model |
+| **3. Execute** | `run(input)` | Applying the model to new, specific input | Deterministic result |
 
-#### **Esempio Concreto del Flusso**
-
-plaintext
+#### **Concrete Flow Example**
 
 ```plaintext
-INPUT: "Leggi github.com/fra00/2WHAV e genera un prompt per API client"
+INPUT: "Read github.com/fra00/2WHAV and generate a prompt for an API client"
          ↓
-LOAD: LLM identifica sezioni WHAT/WHERE/HOW/AUGMENT/VERIFY
-      Riconosce struttura come schema con parametri obbligatori
+LOAD: LLM identifies WHAT/WHERE/HOW/AUGMENT/VERIFY sections
+      Recognizes the structure as a schema with mandatory parameters
          ↓
-COMPILE: LLM costruisce template con:
-         - Vincoli di formato (WHAT: output type)
-         - Priorità architetturali (WHERE: design decisions)
-         - Regole sintattiche (HOW: coding standards)
-         - Ottimizzazioni (AUGMENT: performance patterns)
-         - Criteri validazione (VERIFY: success criteria)
+COMPILE: LLM builds a template with:
+         - Format constraints (WHAT: output type)
+         - Architectural priorities (WHERE: design decisions)
+         - Syntactic rules (HOW: coding standards)
+         - Optimizations (AUGMENT: performance patterns)
+         - Validation criteria (VERIFY: success criteria)
          ↓
-EXECUTE: LLM applica template compilato all'input "API client"
-         Genera sezioni seguendo lo schema appreso
+EXECUTE: LLM applies the compiled template to the "API client" input
+         Generates sections following the learned schema
          ↓
-OUTPUT: Prompt strutturato completo di 1500+ parole
-        Con tutte le sezioni validate secondo il framework
+OUTPUT: A complete, structured prompt of 1500+ words
+        With all sections validated according to the framework
 ```
 
-**Differenza chiave con documentazione tradizionale:**
+**Key Difference from Traditional Documentation:**
 
-| Approccio | Processo LLM | Risultato |
+| Approach | LLM Process | Result |
 | --- | --- | --- |
-| **Tradizionale** | Legge prosa → *Inferisce* cosa fare → Genera output | Vago, inconsistente (±20% variabilità) |
-| **Tool as Prompt** | Carica schema → *Esegue* istruzioni precise → Genera output | Deterministico, consistente (<5% variabilità) |
+| **Traditional** | Reads prose → *Infers* what to do → Generates output | Vague, inconsistent (±20% variability) |
+| **Tool as Prompt** | Loads schema → *Executes* precise instructions → Generates output | Deterministic, consistent (<5% variability) |
 
 ---
 
-### **4. Esempio 1: `llm-first-documentation` – Il Tool che Insegna a Creare Tool**
+### **4. Example 1: `llm-first-documentation` – The Tool that Teaches How to Create Tools**
 
-Il repository del [**framework LLM-First**](https://github.com/fra00/llm-first-documentation) è il primo, perfetto esempio meta-referenziale.
+The [**LLM-First framework**](https://github.com/fra00/llm-first-documentation) repository is the first, perfect meta-referential example.
 
-**Come Documento LLM-First:**  
-È impeccabilmente strutturato. Usa tabelle per confrontare approcci, checklist per la validazione e template per l'applicazione, rendendo i suoi concetti facili da estrarre.
+**As an LLM-First Document:**  
+It is impeccably structured. It uses tables to compare approaches, checklists for validation, and templates for application, making its concepts easy to extract.
 
-**Come "Tool as Prompt":**  
-La sua vera potenza si rivela quando lo si usa come tool eseguibile:
+**As a "Tool as Prompt":**  
+Its true power is revealed when you use it as an executable tool:
 
 ```
-PROMPT: "Leggi e impara i principi da github.com/fra00/llm-first-documentation"
-        "Ora applica questi principi per convertire la mia documentazione:"
-        [incolla vecchia documentazione]
+PROMPT: "Read and learn the principles from github.com/fra00/llm-first-documentation"
+        "Now apply these principles to convert my documentation:"
+        [paste old documentation]
 ```
 
-L'LLM non sta "riassumendo" il framework; sta **usando il README.md come un manuale di istruzioni** per eseguire un task di refactoring strutturale. Il documento è diventato un **convertitore di formato eseguibile**.
+The LLM isn't "summarizing" the framework; it's **using the README.md as an instruction manual** to perform a structural refactoring task. The document has become an **executable format converter**.
 
-**Evidenza empirica:**
+**Empirical Evidence:**
 
-- Documentazione tradizionale → conversione manuale: 2-4 ore/pagina
-- Con Tool as Prompt: conversione automatica: 2-3 minuti/pagina
-- Accuratezza conversione: 85-92% (richiede solo review finale)
+- Traditional documentation → manual conversion: 2-4 hours/page
+- With Tool as Prompt → automatic conversion: 2-3 minutes/page
+- Conversion accuracy: 85-92% (requires only a final review)
 
 ---
 
-### **5. Esempio 2: `2WHAV` – Il Tool che Ingegnerizza i Prompt**
+### **5. Example 2: `2WHAV` – The Tool that Engineers Prompts**
 
-Il framework [**2WHAV**](https://github.com/fra00/2WHAV) è un esempio ancora più puro di "Tool as Prompt". È progettato quasi esclusivamente per l'esecuzione da parte di un LLM.
+The [**2WHAV**](https://github.com/fra00/2WHAV) framework is an even purer example of "Tool as Prompt." It is designed almost exclusively for execution by an LLM.
 
-**Come Documento LLM-First:**  
-La sua struttura è la sua essenza. Le sezioni `# WHAT`, `# WHERE`, `# HOW`, `# AUGMENT`, `# VERIFY` non sono un indice, sono l'**API del tool**. Ogni sezione è un parametro obbligatorio in una chiamata di funzione.
+**As an LLM-First Document:**  
+Its structure is its essence. The `# WHAT`, `# WHERE`, `# HOW`, `# AUGMENT`, `# VERIFY` sections are not a table of contents; they are the **tool's API**. Each section is a required parameter in a function call.
 
-**Come "Tool as Prompt":**  
-2WHAV trasforma il "prompt engineering" in un processo di compilazione. L'LLM **carica** lo schema 2WHAV e, quando riceve una richiesta semplice (`"Crea una funzione Python..."`), la usa come input per **eseguire** il tool, "compilando" tutte le sezioni per produrre un prompt robusto e completo.
+**As a "Tool as Prompt":**  
+2WHAV transforms "prompt engineering" into a compilation process. The LLM **loads** the 2WHAV schema and, when it receives a simple request (`"Create a Python function..."`), it uses that as input to **execute** the tool, "compiling" all the sections to produce a robust and complete prompt.
 
-**Test comparativo (20 prompt semplici: "Crea una funzione X"):**
+**Comparative Test (20 simple prompts: "Create an X function"):**
 
-| Metrica | Senza 2WHAV | Con 2WHAV (Tool as Prompt) | Delta |
+| Metric | Without 2WHAV | With 2WHAV (Tool as Prompt) | Delta |
 | --- | --- | --- | --- |
-| **Lunghezza output** | ~150 parole | ~800 parole | +433% |
-| **Completezza** | 60% sezioni coperte | 95% sezioni coperte | +58% |
-| **Consistenza** | Variabilità ±30% | Variabilità <8% | -73% |
-| **Errori critici** | 4/20 (20%) | 0/20 (0%) | -100% |
+| **Output Length** | ~150 words | ~800 words | +433% |
+| **Completeness** | 60% sections covered | 95% sections covered | +58% |
+| **Consistency** | ±30% variability | <8% variability | -73% |
+| **Critical Errors** | 4/20 (20%) | 0/20 (0%) | -100% |
 
-Il `README.md` non descrive come fare prompt engineering; **è il prompt engineer**.
-
----
-
-### **6. Conclusione: La Documentazione è il Nuovo Codice**
-
-Entrambi i repository dimostrano una verità fondamentale: un documento scritto secondo i principi LLM-First cessa di essere un semplice commento sul codice e diventa una parte attiva del processo computazionale.
-
-Il paradigma "Tool as Prompt" rappresenta il futuro della documentazione tecnica e dell'interazione con l'IA. Ci permette di:
-
-- **Costruire Asset Riutilizzabili:** Creare librerie di tool-documenti per task comuni.
-- **Garantire Consistenza e Qualità:** Standardizzare gli output degli LLM secondo specifiche predefinite.
-- **Collaborare come Ingegneri:** Versionare, testare e fare il debug della nostra documentazione come se fosse codice.
-
-#### **Come Iniziare Oggi**
-
-**Livello 1 - Consume Tools (5 minuti):**
-
-```
-Carica: https://github.com/fra00/2WHAV
-Esegui: "Applica il framework a: Crea validatore email in TypeScript"
-```
-
-**Livello 2 - Converti Docs Esistenti (30 minuti):**
-
-```
-Carica: https://github.com/fra00/llm-first-documentation
-Esegui: "Converti la mia API documentation: [incolla contenuto]"
-```
-
-**Livello 3 - Crea Nuovi Tools (1-2 ore):**
-
-1. Identifica un processo ripetitivo nel tuo workflow
-2. Documentalo usando principi LLM-First (tabelle, header, decision trees)
-3. Testalo: l'LLM riesce ad eseguirlo senza ambiguità?
-4. Se sì: hai creato un "Tool as Prompt" ✅
+The `README.md` doesn't describe how to do prompt engineering; **it is the prompt engineer**.
 
 ---
 
-### **Prossima Frontiera**
+### **6. Conclusion: Documentation is the New Code**
 
-È ora di smettere di scrivere documentazione che *spiega* e iniziare a costruire documentazione che *fa*.
+Both repositories demonstrate a fundamental truth: a document written according to LLM-First principles ceases to be a mere comment on the code and becomes an active part of the computational process.
 
-La prossima volta che apri un file `README.md`, non chiederti solo:  
-❌ "Cosa dice?"
+The "Tool as Prompt" paradigm represents the future of technical documentation and AI interaction. It allows us to:
 
-Ma anche:  
-✅ "Cosa può **eseguire**?"
+- **Build Reusable Assets:** Create libraries of tool-documents for common tasks.
+- **Ensure Consistency and Quality:** Standardize LLM outputs according to predefined specifications.
+- **Collaborate Like Engineers:** Version, test, and debug our documentation as if it were code.
+
+#### **How to Get Started Today**
+
+**Level 1 - Consume Tools (5 minutes):**
+
+```
+Load: https://github.com/fra00/2WHAV
+Run: "Apply the framework to: Create an email validator in TypeScript"
+```
+
+**Level 2 - Convert Existing Docs (30 minutes):**
+
+```
+Load: https://github.com/fra00/llm-first-documentation
+Run: "Convert my API documentation: [paste content]"
+```
+
+**Level 3 - Create New Tools (1-2 hours):**
+
+1. Identify a repetitive process in your workflow.
+2. Document it using LLM-First principles (tables, headers, decision trees).
+3. Test it: Can the LLM execute it without ambiguity?
+4. If yes: you've created a "Tool as Prompt" ✅
 
 ---
 
-#### **Repository di Riferimento**
+### **The Next Frontier**
+
+It's time to stop writing documentation that *explains* and start building documentation that *does*.
+
+The next time you open a `README.md` file, don't just ask:  
+❌ "What does it say?"
+
+But also:  
+✅ "What can it **execute**?"
+
+---
+
+#### **Reference Repositories**
 
 - 📚 [LLM-First Documentation Framework](https://github.com/fra00/llm-first-documentation)
 - 🛠️ [2WHAV Prompt Engineering Tool](https://github.com/fra00/2WHAV)
 
-#### **Approfondimenti**
+#### **Further Reading**
 
-- 🔬 [Benchmark "Saga di Lyra"](https://github.com/fra00/llm-first-documentation/tree/main/benchmark) *(dati empirici)*
+- 🔬 ["The Saga of Lyra" Benchmark](https://github.com/fra00/llm-first-documentation/tree/main/benchmark) *(empirical data)*
 
 ---
 
-*Questo articolo è stato scritto applicando i principi che descrive.*  
-*Testalo: chiedi a un LLM di spiegare "Tool as Prompt" dopo aver letto questo testo.*
+*This article was written by applying the principles it describes.*  
+*Test it: ask an LLM to explain "Tool as Prompt" after reading this text.*
